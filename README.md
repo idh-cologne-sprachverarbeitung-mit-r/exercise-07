@@ -30,11 +30,17 @@ Enter the directory `cd exercise-07`
 Create a new branch for you: `git checkout -b USERNAME`.
 
 ## Step 3
-Again (as last week), open the file `R/exercise.R` in your favorite text editor. Depending on your operating system and settings, double clicking may open an editor that came with the R installation.
+Again (as last week), open the file `R/exercise.R` in your favorite text editor. Depending on your operating system and settings, double clicking may open an editor that came with the R installation. The directory `data` contains a few files we‘ll be using in the exercises.
 
 - a) Please add code to load the package `datasets` to the file (and test it). The package contains a number of default data sets. Please load the data set `mtcars`. 
 - b) `mtcars` contains information about cars. Please assign the mean number of cylinders to the variable `b`.
-- c) Write a function `c` that takes two 
+
+- c) Write a function `c` to load a corpus. The function expects a directory name (which should default to `data`), and loads all files ending on `.txt`. The function should return a list of vectors. The outer list corresponds to the files. The vectors contain the tokens of the files. For the moment, we‘ll assume that we can split on single space characters. 
+
+- d) Write a function `d` that takes as input a list of vectors (e.g., the output of function `c`). The function `d` should then remove all function words from all vectors. I.e., if the input of the function is `list(c("the", "dog","barks"),c("the","cow","moohs"))`, its output should be  `list(c("dog","barks"),c("cow","moohs"))`. To provide stop words to the function, please use an argument with a default value. You can use the following list of stop words: `c("i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now")`.
+
+
+
 
 ## Step 4
 Don't forget to save your file.
