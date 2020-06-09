@@ -10,12 +10,12 @@ The goal of this exercise is to get to learn about packages and to basic string 
 
 Reading. As discussed previously, we will now switch the underlying tutorial.
 
-Starting this week, we'll be using the book "Corpus Linguistics and Statistics with R" by G. Desagulier (2017). The book is available via the university library, but since the library is offline at the moment, a copy of the relevant sections has been uploaded to ilias.
+Starting this week, we'll be using the book ["Corpus Linguistics and Statistics with R" by G. Desagulier (2017)](https://www.springer.com/gp/book/9783319645704). The book is available via the university library, but since the library is offline at the moment, a copy of the relevant sections has been uploaded to ilias.
 
-The relevant sections are:
+The relevant sections for this week are:
 
 - Section 2.5: Packages, and
-- Sections 4.1 to 4.3: String processing (except regular expressions, which will be covered next week).
+- Sections 4.1 to 4.3: String processing (except regular expressions, which we‘ll cover next week).
 
 ## Step 2
 
