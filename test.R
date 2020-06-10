@@ -7,20 +7,31 @@ test_that("b) yields the correct result", {
 })
 
 
-test_that("c) yields the correct result", {
-	expect_equal(c, c(41.825046, 8.045578), tolerance=1e-3)
+test_that("readCorpus) yields the correct result", {
+	corp <- readCorpus("data")
+	expect_length(corp, 97)
+	expect_equal(sum(unlist(lapply(corp,length))), 821307)
+	expect_equal(mode(corp[[5]]), "character")
 })
 
-test_that("d) yields the correct result", {
-	expect_equal(class(d),"data.frame")
-	expect_equal(nrow(d),2)
-	expect_equal(ncol(d),4)
-	expect_setequal(d$name, c("Juliet","Romeo"))
-	expect_equal(d[d$name=="Romeo","numWords"], 5563)
-	expect_equal(d[d$name=="Juliet","ttr"], 0.2522209, tolerance=1e-3)
-	expect_equal(d[d$name=="Romeo","numSentences"], 591, tolerance=1e-3)
+test_that("removeStopwords) yields the correct result in a dummy situation", {
+	corp <- list(c("the","dog","barks"),c("i","like","them"))
+	corp2 <- removeStopwords(corp)
+	expect_length(corp2[[1]],2)
+	expect_length(corp2[[2]],1)
 })
 
-test_that("e) yields the correct result", {
-	expect_equal(e, "Romeo")
+test_that("removeStopwords) yields the correct result if called with the given stopwords", {
+	corp <- readCorpus("data")
+	corp2 <- removeStopwords(corp)
+	expect_length(corp2, 97)
+	expect_equal(sum(unlist(lapply(corp2,length))), 454341)
+	expect_equal(mode(corp[[5]]), "character")
 })
+	
+test_that("removeStopwords) yields the correct result if called w/o stopwords", {
+	corp <- readCorpus("data")
+	corp2 <- removeStopwords(corp, stopwords=c())
+	expect_equal(sum(unlist(lapply(corp2,length))), 821307)
+})
+
