@@ -21,7 +21,7 @@ test_that("removeStopwords) yields the correct result in a dummy situation", {
 	expect_length(corp2[[2]],1)
 })
 
-test_that("removeStopwords) yields the correct result if called with the given stopwords", {
+test_that("removeStopwords) yields the correct result if called with the default stopwords", {
 	corp <- readCorpus("data")
 	corp2 <- removeStopwords(corp)
 	expect_length(corp2, 97)
